@@ -3,11 +3,13 @@ package collections.lowerCase;
 import java.util.*;
 //turn every string in List to lowerCase
 public class Main {
-    public static String toLowerCase(String[] str) {
-        List<String> a = new ArrayList<>(Arrays.asList(str));
-        for (String s : a) {
-            System.out.println(s.toLowerCase(Locale.ROOT));
-        }
-        return null;
+
+    public static void main(String[] args) {
+        String[] strings = {"Winter", "Spring", "Summer", "Autumn"};
+        System.out.println(toLowerCase(strings));
+    }
+
+    public static List<String> toLowerCase(String[] str) {
+        return Arrays.stream(str).map(String::toLowerCase).toList();
     }
 }
